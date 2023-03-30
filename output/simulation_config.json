@@ -1,0 +1,54 @@
+{
+  "target_simulator": "NEURON",
+  "run": {
+    "nsteps_block": 10000,
+    "tstop": 60500.0,
+    "dt": 0.1,
+    "dL": 9999,
+    "spike_threshold": 0.0
+  },
+  "conditions": {
+    "celsius": 34.0,
+    "v_init": -70.0
+  },
+  "output": {
+    "spikes_file_csv": "./output/spikes.csv",
+    "spikes_file": "./output/spikes.h5",
+    "log_file": "./output/log.txt",
+    "output_dir": "./output",
+    "overwrite_output_dir": true
+  },
+  "reports": {
+    "membrane_report": {
+      "module": "membrane_report",
+      "cells": [
+        0
+      ],
+      "variable_name": [
+        "v"
+      ],
+      "file_name": "cell_vars.h5",
+      "sections": "soma"
+    }
+  },
+  "network": "./circuit_config.json",
+  "config_path": "/home/ifbdtk/LUT_TOY/LUT_Prelim/jsons/simulation_config.json",
+  "config_dir": "/home/ifbdtk/LUT_TOY/LUT_Prelim/jsons",
+  "components": {
+    "point_neuron_models_dir": "./biophys_components/point_neuron_templates",
+    "biophysical_neuron_models_dir": "./biophys_components/biophysical_neuron_templates",
+    "mechanisms_dir": "./biophys_components/mechanisms",
+    "morphologies_dir": "./biophys_components/morphologies",
+    "synaptic_models_dir": "./biophys_components/synaptic_models",
+    "templates_dir": "./biophys_components/hoc_templates"
+  },
+  "networks": {
+    "nodes": [
+      {
+        "nodes_file": "./network//LUT_TOY_nodes.h5",
+        "node_types_file": "./network//LUT_TOY_node_types.csv"
+      }
+    ],
+    "edges": []
+  }
+}
