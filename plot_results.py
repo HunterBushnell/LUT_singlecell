@@ -30,9 +30,11 @@ def run(config_file=None,sim=None,conf=None):
     output_dir = conf.output_dir
     print(n_steps,dt)
 
-    spikes_df = pd.read_csv(os.path.join(output_dir,'output/spikes.csv'), sep=' ')
+    spikes_df = pd.read_csv(os.path.join(output_dir,'spikes.csv'), sep=' ')
+    # spikes_df = pd.read_csv(os.path.join(output_dir,'output/spikes.csv'), sep=' ')
     print(spikes_df['node_ids'].unique())
-    spike_trains = SpikeTrains.from_sonata(os.path.join(output_dir,'output/spikes.h5'))
+    spike_trains = SpikeTrains.from_sonata(os.path.join(output_dir,'spikes.h5'))
+    # spike_trains = SpikeTrains.from_sonata(os.path.join(output_dir,'output/spikes.h5'))
 
     #plotting
     window_size = 1000
